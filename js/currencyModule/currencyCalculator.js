@@ -11,7 +11,7 @@ function currencyCalculatorFactory() {
 
 	var currencyCalculator = new Object();
 
-	var userInputAmount = prompt("Enter amount in USD");
+	var userInputAmount = prompt("How much would you like to convert to USD?");
 
 	currencyCalculator.currencyObjectCollectionUSD = [];
 
@@ -37,7 +37,6 @@ function currencyCalculatorFactory() {
 				
 				currencyCalculator.convertAmountBitcoin(currencyCalculator.currencyObjectCollectionUSD);
 				currencyCalculator.convertAmountGoldSilver(currencyCalculator.currencyObjectCollectionGrams);
-				
 				currencyCalculator.printData();
 			}
 		}
@@ -50,29 +49,20 @@ function currencyCalculatorFactory() {
 	*/
 	currencyCalculator.convertAmountBitcoin = function (data) {
 		for (key in data) {
-			var bitcoinAmount = (data[0].convertValue);
-			//var goldAmount = (data[1].convertValue);
-			//var silverAmount = (data[2].convertValue);
-			
+			finalBitcoinAmount = (data[0].convertValue);
 		}
-		 finalBitcoinAmount = bitcoinAmount *= userInputAmount;
-		//var finalGoldAmount = goldAmount *= userInputAmount;
-		//var finalSilverAmount = silverAmount *= userInputAmount;
-
-		//Displays final result in an alert box
-		//alert("Bitcoin equals " + finalBitcoinAmount + "\n" + "Gold equals " + finalGoldAmount + "\n" + "Silver equals " + finalSilverAmount);
-			
+		 finalBitcoinAmount *= userInputAmount;
 	}
 
 	currencyCalculator.convertAmountGoldSilver = function (data) {
 		for (key in data) {
-			var goldAmount = (data[0].convertValue);
-			var silverAmount = (data[1].convertValue);
+			 finalGoldAmount = (data[0].convertValue);
+			 finalSilverAmount = (data[1].convertValue);
 			
 		}
 
-		 finalGoldAmount = goldAmount *= userInputAmount;
-		 finalSilverAmount = silverAmount *= userInputAmount;
+		 finalGoldAmount *= userInputAmount;
+		 finalSilverAmount *= userInputAmount;
 	}
 
 	/**
@@ -80,7 +70,7 @@ function currencyCalculatorFactory() {
 	*/
 	currencyCalculator.printData = function () {
 		alert("Bitcoin equals " +
-		 finalBitcoinAmount + "dollars" +
+		 finalBitcoinAmount + " dollars" +
 		  "\n" + "Gold equals " +
 		   finalGoldAmount + " grams" +
 		    "\n" + "Silver equals " +
